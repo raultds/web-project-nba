@@ -1,0 +1,13 @@
+{%  extends 'NBAstats/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<h1>Welcome to NBA stats </h1>
+
+<a href="conference/1">
+  <img src="{% static "eastlogo.png" %}"/>
+</a>
+<a href="conference/2">
+  <img src="{% static "westlogo.png" %}"/>
+</a>
+
+{%  endblock %}

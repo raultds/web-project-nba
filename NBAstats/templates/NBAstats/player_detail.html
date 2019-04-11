@@ -1,0 +1,11 @@
+{%  extends 'NBAstats/base.html' %}
+{% block content %}
+
+    <h1>{{player.name}} {{ player.last_name }}</h1>
+    <h3>Number {{ player.jersey_num}} for {{player.team_city }} {{player.team_name}}</h3>
+    <h4>Position: {{player.position}} Weight: {{player.weight}} Height: {{player.height}} <h4>
+    <h4>Born on {{player.birth_date}} in {{player.birth_city}} [{{player.birth_country}}] <h4>
+    <!--{% for stat, value in stats.items %}
+        <h4>{{stat}}:  {{value}}</h4>
+    {% endfor %}-->
+{%  endblock %}

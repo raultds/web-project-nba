@@ -1,0 +1,7 @@
+{%  extends 'NBAstats/base.html' %}
+{% block content %}
+    <h1>Conference {{ conference.conference_name }}</h1>
+    {% for team in teams %}
+        <h4><a href="team/{{ team.team_id }}">{{ team.team_city}} {{ team.team_name}}</a></h4>
+    {%  endfor %}
+{%  endblock %}
