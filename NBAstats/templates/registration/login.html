@@ -1,8 +1,10 @@
+{%  extends 'NBAstats/base.html' %}
+{% block content %}
 {% if form.errors %}
       <p>Your username and password didn't match. Please try again.</p>
   {% endif %}
 
-  <h2> MyRecommendations Login </h2>
+  <h2> NBAstats Login </h2>
 
   <form method="post" action="{% url 'login' %}">
       <table>
@@ -23,3 +25,4 @@
 
       {% csrf_token %}
   </form>
+{% endblock %}
