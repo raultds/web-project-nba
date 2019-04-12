@@ -134,3 +134,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
 STAT,
 ]
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
