@@ -1,1 +1,1 @@
-web: gunicorn NBAstats.wsgi
+web: gunicorn web-project-nba.wsgi
