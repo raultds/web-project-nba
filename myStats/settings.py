@@ -23,6 +23,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+MIDDLEWARE_CLASSES = (
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    )
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -30,7 +35,7 @@ MIDDLEWARE = [
 SECRET_KEY = '!vlenjyx9yi0slk7_!-=%%+_b@r1x-a9jyz8s_(@5r847fi4e6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -129,7 +134,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
 STAT,
 ]
-
-#Configure DJANGO APP for HEroku
-import django_heroku
-django_heroku.settings(locals()))
