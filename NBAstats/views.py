@@ -7,7 +7,7 @@ from api.APIrequests import team_request, player_request
 
 
 def home(request):
-    return render(request, '*/home.html', None)
+    return render(request, 'NBAstats/home.html', None)
 
 class conference_detail(DetailView):
     model = conference
