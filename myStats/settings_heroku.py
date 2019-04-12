@@ -4,7 +4,7 @@ import django_heroku
 django_heroku.settings(locals())
 
 
-DEBUG = False
+DEBUG = True
 
 # To be completed only with the deploy server
 # ALLOWED_HOSTS = []
