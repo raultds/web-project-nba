@@ -30,7 +30,7 @@ class team_detail(DetailView):
 
         context['players'] = player.objects.filter(team_name=context['team'].team_name)
         context['title'] = context['team'].team_name
-        #context['stats'] = team_request(context['team'].team_id)
+        context['stats'] = team_request(context['team'].team_id)
 
         return context
 
@@ -41,6 +41,6 @@ class player_detail(DetailView):
 
         def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
-            #context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+            context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
 
             return context
