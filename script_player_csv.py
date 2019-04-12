@@ -17,7 +17,8 @@ contSuccess = 0
 player.objects.all().delete()
 
 with open(CSV_PATH, newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=';', quotechar=';')
+
+    spamreader = csv.reader(csvfile, delimiter=',')
     print('Loading...')
     for row in spamreader:
         print(row)

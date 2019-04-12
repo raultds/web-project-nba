@@ -16,6 +16,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STAT = os.path.join(BASE_DIR, 'static')
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL ='/static/'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -23,7 +25,7 @@ STAT = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = '!vlenjyx9yi0slk7_!-=%%+_b@r1x-a9jyz8s_(@5r847fi4e6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -122,3 +124,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
 STAT,
 ]
+
+#Configure DJANGO APP for HEroku
+import django_heroku
+django_heroku.settings(locals()))
