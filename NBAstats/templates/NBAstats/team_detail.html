@@ -1,10 +1,14 @@
 {%  extends 'NBAstats/base.html' %}
 {% block content %}
     <h1>{{team.team_city}} {{ team.team_name }}</h1>
-    {% for stat, value in stats.items %}
-        <h4>{{stat}}:  {{value}}</h4>
-    {% endfor %}
-    {% for player in players %}
-        <h4><a href="player/{{ player.player_id }}">{{ player.name}} {{player.last_name }}</a></h4>
-    {%  endfor %}
+    <h4><a href="stats/{{ team.team_id }}"> Team stats </a></h4>
+    <div class="row-sm-4">
+            {% for player in players %}
+
+                <img src="{{ player.player_photo }}">
+                <h4><a href="player/{{ player.player_id }}">{{ player.name}} {{player.last_name }}</a></h4>
+            {%  endfor %}
+
+    </div>
+
 {%  endblock %}

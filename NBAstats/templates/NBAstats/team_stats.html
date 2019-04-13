@@ -1,0 +1,7 @@
+{%  extends 'NBAstats/base.html' %}
+{% block content %}
+    <h1>{{team.team_city}} {{ team.team_name }}</h1>
+    {% for stat, value in stats.items %}
+        <h4>{{stat}}:  {{value}}</h4>
+    {% endfor %}
+{% endblock %}
