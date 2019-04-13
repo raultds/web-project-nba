@@ -6,7 +6,9 @@
     {% for player in players %}
         <ul class="nav flex-column">
             <li class="nav-item">
-                <img src="{{ player.player_photo }}">
+                <a href="player/{{ player.player_id }}">
+                    <img src="{{ player.player_photo }}">
+                </a>
             </li>
             <li class="nav-item">
                 <h4><center><a href="player/{{ player.player_id }}">{{ player.name}} {{player.last_name }}</a></h4>
