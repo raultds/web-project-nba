@@ -1,8 +1,10 @@
 {%  extends 'NBAstats/base.html' %}
 {% load static %}
 {% block content %}
-    <h1>{{team.team_city}} {{ team.team_name }}</h1>
-    <h4><a href="stats/{{ team.team_id }}"> Team stats </a></h4>
+    <ul class="navbar">
+        <h1>{{team.team_city}} {{ team.team_name }}</h1>
+        <h2><a class="btn btn-secondary btn-lg" href="stats/{{ team.team_id }}"> Team stats </a></h2>
+    <ul>
     <ul class="nav">
     {% for player in players %}
         <ul class="nav flex-column">
