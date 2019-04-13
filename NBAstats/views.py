@@ -43,7 +43,6 @@ class player_detail(DetailView):
         def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
             context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
-
             return context
 
 class team_stats(DetailView):
