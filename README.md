@@ -2,7 +2,17 @@
 
 This repository contains a python application that shows you the NBA players' and teams' stats from this last seasson.
 
-The players are divided by teams, and the teams by conferences to facilitate the search. 
+The players are divided by teams, and the teams by conferences to facilitate the search.
+
+## Authors
+
+- Arnau Nadal
+
+- Raul Roca
+
+- Pablo Serrano
+
+- Francesc Tuset
 
 ## How to run it?
 
@@ -16,11 +26,23 @@ With this first step done, you will need to install with pip all the prerequisit
 
 ### Running the project
 
-Once you understanded all the requirements, you can clone the repository, and start it with the comand:
+Once you understood all the requirements, you can clone the repository, and start it with the comand:
 
 $./manage.py runserver
 
-And then, access the web with the delivered link.
+And then, access the web with the delivered link. The users and the passwords to acces are the next ones:
+
+#### As a User
+
+Username: prova
+
+Password: nba123456789
+
+#### As an Admin
+
+Username: admin
+
+Password: nbastats1234
 
 ## Design decisions
 
@@ -44,6 +66,10 @@ Store config in the environment.
 
 Strictly separate build and run stages (In this case, it's more like an objective than an accomplishment. Our design meet its, but heroku is not working well yet in our project, so until we fix the errors it will be pending).
 
+### Models
+
+We have created 3 different models, which are conference', team' and 'player'. This is, also, the distribution that we have done with the information.
+
 ### Data access
 
-We dispose a little database where we have saved all the players' and teams' names and basic information. And then, we access the [MySportsFeeds](https://www.mysportsfeeds.com/) API to get the last season stats when you select a player/team. 
+We dispose a little database where we have saved all the players' and teams' names and basic information. And then, we access the [MySportsFeeds](https://www.mysportsfeeds.com/) API through a separate python function to get the last season stats when you select a player/team. 
