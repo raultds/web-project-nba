@@ -1,6 +1,8 @@
 import base64
 import json
-import requests
+
+from pip._vendor import requests
+
 
 def team_request(id):
     list_stats = ['GamesPlayed', 'Fg2PtAtt', 'Fg2PtAttPerGame', 'Fg2PtMade', 'Fg2PtMadePerGame', 'Fg2PtPct', 'Fg3PtAtt', 'Fg3PtAttPerGame', 'Fg3PtMade', 'Fg3PtMadePerGame', 'Fg3PtPct', 'FgAtt', 'FgAttPerGame', 'FgMade', 'FgMadePerGame', 'FgPct', 'FtAtt', 'FtAttPerGame', 'FtMade', 'FtMadePerGame', 'FtPct', 'OffReb', 'OffRebPerGame', 'DefReb', 'DefRebPerGame', 'Reb', 'RebPerGame', 'Ast', 'AstPerGame', 'Pts', 'PtsPerGame', 'Tov', 'TovPerGame', 'Stl', 'StlPerGame', 'Blk', 'BlkPerGame', 'BlkAgainst', 'BlkAgainstPerGame', 'PtsAgainst', 'PtsAgainstPerGame', 'Fouls', 'FoulsPerGame', 'FoulPers', 'FoulPersPerGame', 'FoulTech', 'FoulTechPerGame', 'PlusMinus', 'PlusMinusPerGame', 'FoulsDrawn', 'FoulsDrawnPerGame', 'FoulPersDrawn', 'FoulPersDrawnPerGame', 'FoulTechDrawn', 'FoulTechDrawnPerGame', 'FoulFlag1', 'FoulFlag1PerGame', 'FoulFlag1Drawn', 'FoulFlag1DrawnPerGame', 'FoulFlag2', 'FoulFlag2PerGame', 'FoulFlag2Drawn', 'FoulFlag2DrawnPerGame', 'Ejections', 'Wins', 'Losses', 'WinPct', 'GamesBack']
