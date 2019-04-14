@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-    Script to import book data from .csv file to Model Database DJango
+    Script to import team data from .csv file to Model Database DJango
     To execute this script run:
                                 1) manage.py shell
                                 2) exec(open('script_team_csv.py').read())
