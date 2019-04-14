@@ -1,0 +1,24 @@
+{%  extends 'NBAstats/base.html' %}
+{% block content %}
+    <ul class="nav">
+        <img src="{{ player.player_photo }}">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <h1>{{player.name}} {{ player.last_name }}</h1>
+            </li>
+            <li class="nav-item">
+              <h3>Number {{ player.jersey_num}} for {{player.team_city }} {{player.team_name}}</h3>
+            </li>
+            <li class="nav-item">
+              <h4>Position: {{player.position}} Weight: {{player.weight}} lb  Height: {{player.height}} </h4>
+            </li>
+            <li class="nav-item">
+              <h4>Born on {{player.birth_date}} in {{player.birth_city}} [{{player.birth_country}}] </h4>
+            </li>
+        </ul>
+    </ul>
+    </br>
+    {% for stat, value in stats.items %}
+        <h4>{{stat}}:  {{value}}</h4>
+    {% endfor %}
+{%  endblock %}

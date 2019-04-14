@@ -1,0 +1,30 @@
+{%  extends 'NBAstats/base.html' %}
+{% load static %}
+{% block content %}
+    <ul class="navbar">
+        <h1>{{team.team_city}} {{ team.team_name }}</h1>
+        <h2><a class="btn btn-secondary btn-lg" href="stats/{{ team.team_id }}"> Team stats </a></h2>
+    <ul>
+    <ul class="nav">
+    {% for player in players %}
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                {% if player.player_photo %}
+                    <a href="player/{{ player.player_id }}">
+                        <img src="{{ player.player_photo }}">
+                    </a>
+                {% else %}
+                    <a href="player/{{ player.player_id }}">
+                    <img src="{% static "silueta.png" %}">
+                    </a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                <div style="text-align: center;">
+                    <h4><a href="player/{{ player.player_id }}">{{ player.name}} {{player.last_name }}</a></h4>
+                </div>
+            </li>
+        </ul>
+    {%  endfor %}
+    </ul>
+{%  endblock %}
