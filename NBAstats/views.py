@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from NBAstats.models import *
+from PIL import Image
+
 
 # Create your views here.
 from api.APIrequests import team_request, player_request
