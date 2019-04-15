@@ -18,31 +18,36 @@ The players are divided by teams, and the teams by conferences to facilitate the
 
 Here you have some considerations about how to run the project in your local machine.
 
-### Requisites
+### Localy
+  ## Requisites
 
-This project uses python 3.6 and pip, so you will need to have them both.
+  This project uses python 3.6 and pip, so you will need to have them both.
 
-With this first step done, you will need to install with pip all the prerequisites in [requirements.txt](https://github.com/raultds/web-project-nba/blob/dev/requirements.txt).
+  With this first step done, you will need to install with pip all the prerequisites in [requirements.txt](https://github.com/raultds/web-project-nba/blob/dev/requirements.txt).
 
-### Running the project
+  ## Running the project
 
-Once you understood all the requirements, you can clone the repository, and start it with the comand:
+  Once you understood all the requirements, you can clone the repository, and start it with the comand:
 
-$./manage.py runserver
+  $./manage.py runserver
 
-And then, access the web with the delivered link. The users and the passwords to acces are the next ones:
+  And then, access the web with the delivered link. The users and the passwords to acces are the next ones:
 
-#### As a User
+  ### As a User
 
-Username: prova
+  Username: prova
 
-Password: nba123456789
+  Password: nba123456789
 
-#### As an Admin
+  ### As an Admin
 
-Username: admin
+  Username: admin
 
-Password: nbastats1234
+  Password: nbastats1234
+
+### Deployed
+  We deployed our application to Heroku. After more than 30 tries, we managed to deploy the application to heroku but the static images   are not properly shown. You can acces the conference links if you click to the "missing image" icon. On the next deliverable it will     be solved. 
+  Link: https://nbastats.herokuapp.com/
 
 ## Design decisions
 
