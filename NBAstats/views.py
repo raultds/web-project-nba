@@ -75,8 +75,17 @@ class team_stats(DetailView):
         return context
 
 
-class my_all_stars(CreateView):
-    model = all_star
-    form_class = all_star
-    template_name = 'NBAstats/myallstars.html'
-    https: // www.agiliq.com / blog / 2019 / 01 / django - createview /
+
+def all_stars(request):
+    all_stars_teams = all_star.objects.all()
+    return render(request, 'NBAstats/all_stars.html', {'all_stars_teams' : all_stars_teams})
+
+def my_all_stars(request):
+    return render(request, 'NBAstats/myallstars.html', None)
+
+
+# class my_all_stars(CreateView):
+#     model = all_star
+#     form_class = all_star
+#     template_name = 'NBAstats/myallstars.html'
+#     https: // www.agiliq.com / blog / 2019 / 01 / django - createview /

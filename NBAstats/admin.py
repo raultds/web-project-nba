@@ -5,3 +5,4 @@ from django.contrib.auth.models import User
 admin.site.register(models.team)
 admin.site.register(models.player)
 admin.site.register(models.conference)
+admin.site.register(models.all_star)
