@@ -23,7 +23,7 @@ class team(models.Model):
     team_city = models.CharField(blank=True, null=True, max_length=20)
     team_name = models.CharField(blank=True, null=True, max_length=15)
     conference = models.ForeignKey(conference, default=1 ,on_delete=models.CASCADE)
-    image_path = models.CharField(blank=True, null=True, max_length=30)
+    image_path = models.CharField(blank=True, null=True, max_length=30, default='a')
     def __str__(self):
         return self.team_city + ' ' + self.team_name
 
@@ -72,4 +72,4 @@ class all_star(models.Model):
         return self.user_id.pk + ' ' + self.user_id.name
 
     def get_absolute_url(self):
-        return reverse('myStats:all_star', kwargs={'pk': self.user_id})
+        return reverse('myStats:all_star', kwargs={'pk': self.user_id.pk})
