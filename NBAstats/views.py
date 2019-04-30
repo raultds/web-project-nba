@@ -77,4 +77,6 @@ class team_stats(DetailView):
 
 class my_all_stars(CreateView):
     model = all_star
-    fields = ['player1', 'player2', 'player3', 'player4', 'player5', 'player6', 'player7','player8', 'player9', 'player10', 'player11', 'player12']
+    form_class = all_star
+    template_name = 'NBAstats/myallstars.html'
+    https: // www.agiliq.com / blog / 2019 / 01 / django - createview /
