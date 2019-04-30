@@ -55,3 +55,6 @@ class team_stats(DetailView):
         context['title'] = context['team'].team_name
         context['stats'] = team_request(context['team'].team_id)
         return context
+
+def myallstars(request):
+    return render(request, 'NBAstats/myallstars.html', None)

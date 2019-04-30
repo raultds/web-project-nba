@@ -11,6 +11,9 @@
     <ul class="navbar-nav mr-auto">
         <a class="nav-link" href="/">Home</a>
     </ul>
+    <ul class="navbar-nav mr-auto">
+        <a class="nav-link" href="myallstars">MyAllStars</a>
+    </ul>
     {% block header %}
         {% if user.is_authenticated %}
             <p>User: {{ user.username }} | <a href="{% url 'logout' %}?next={{request.path}}">Logout</a></p>
