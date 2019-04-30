@@ -19,8 +19,13 @@ class conference_detail(DetailView):
 
         context['teams'] = team.objects.filter(conference_name=context['conference'].conference_name+"ern")
         context['title'] = context['conference'].conference_name + ' conference'
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
 
         return context
+
 
 class team_detail(DetailView):
     model = team
@@ -33,7 +38,12 @@ class team_detail(DetailView):
         context['players'] = player.objects.filter(team_name=context['team'].team_name)
         context['title'] = context['team'].team_name
         context['stats'] = team_request(context['team'].team_id)
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
         return context
+
 
 class player_detail(DetailView):
         model = player
@@ -43,6 +53,10 @@ class player_detail(DetailView):
         def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
             context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+            if not self.request.user.is_authenticated:
+                context['allstars'] = False
+            else:
+                context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
             return context
 
 class team_stats(DetailView):
@@ -54,7 +68,13 @@ class team_stats(DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = context['team'].team_name
         context['stats'] = team_request(context['team'].team_id)
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
         return context
 
-def myallstars(request):
+
+def my_all_stars(request):
+
     return render(request, 'NBAstats/myallstars.html', None)
