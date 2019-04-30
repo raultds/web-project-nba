@@ -9,10 +9,10 @@
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
     <span class="navbar-brand">NBAStats</span>
     <ul class="navbar-nav mr-auto">
-        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="{% url 'home' %}?next={{request.path}}">Home</a>
     </ul>
     <ul class="navbar-nav mr-auto">
-        <a class="nav-link" href="myallstars">MyAllStars</a>
+        <a class="nav-link" href="{% url 'my_all_stars' %}?next={{request.path}}">MyAllStars</a>
     </ul>
     {% block header %}
         {% if user.is_authenticated %}
