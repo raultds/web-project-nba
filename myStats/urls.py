@@ -31,5 +31,5 @@ urlpatterns = [
     path('conference/team/player/<int:pk>', player_detail.as_view(), name='player_detail'),
     path('accounts/login/', djangoViews.LoginView.as_view(), name='login'),
     path('accounts/logout/', djangoViews.LogoutView.as_view(), name='logout'),
-    path('myallstars/', views.my_all_stars, name='my_all_stars'),
+    path('myallstars/', my_all_stars.as_view(), name='my_all_stars'),
 ]

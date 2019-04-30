@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from NBAstats.models import *
 
 # Create your views here.
@@ -75,6 +75,6 @@ class team_stats(DetailView):
         return context
 
 
-def my_all_stars(request):
-
-    return render(request, 'NBAstats/myallstars.html', None)
+class my_all_stars(CreateView):
+    model = all_star
+    fields = ['player1', 'player2', 'player3', 'player4', 'player5', 'player6', 'player7','player8', 'player9', 'player10', 'player11', 'player12']
