@@ -17,7 +17,7 @@
 </ul>
 <ul class="nav justify-content-center">
   <ul class="nav flex-column">
-    <a href="{% url 'my_all_stars' %}">
+    <a href="{% url 'all_all_stars' %}?next={{request.path}}">
       <img src="{% static "NBAstats/img/AllStarsLogo.png" %}" height="300" width="300"/>
     </a>
   </ul>

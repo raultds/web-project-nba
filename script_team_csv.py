@@ -17,9 +17,9 @@ contSuccess = 0
 team.objects.all().delete()
 
 with open(CSV_PATH, newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=',', quotechar=',')
+    spamreader = csv.reader(csvfile, delimiter=';', quotechar=';')
     print('Loading...')
     for row in spamreader:
-        team.objects.create(team_id=row[0], conference_name=row[1], team_abbr=row[2], team_city=row[3], team_name=row[4])
+        team.objects.create(team_id=row[0], conference_name=row[1], team_abbr=row[2], team_city=row[3], team_name=row[4], image_path=row[5])
         contSuccess += 1
     print('{str(contSuccess)} inserted successfully! ')
