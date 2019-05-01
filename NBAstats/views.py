@@ -1,5 +1,9 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
+
+from NBAstats.forms import all_stars_form
 from NBAstats.models import *
 
 # Create your views here.
@@ -75,17 +79,45 @@ class team_stats(DetailView):
         return context
 
 
-
+""""
 def all_stars(request):
     all_stars_teams = all_star.objects.all()
     return render(request, 'NBAstats/all_stars.html', {'all_stars_teams' : all_stars_teams})
 
 def my_all_stars(request):
     return render(request, 'NBAstats/myallstars.html', None)
+"""
+
+class my_all_stars(CreateView):
+    model = all_star
+    form_class = all_star
+    template_name = 'NBAstats/myallstars.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {'form': all_stars_form(request.POST)}
+        return render(request, 'NBAstats/all_stars_form.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = all_stars_form(request.POST)
+        if form.is_valid():
+            all_star_instance = form.save()
+            all_star_instance.save()
+            return HttpResponseRedirect(reverse_lazy('home'))
+        return render(request, 'NBAstats/all_stars_form.html', {'form': form})
 
 
-# class my_all_stars(CreateView):
-#     model = all_star
-#     form_class = all_star
-#     template_name = 'NBAstats/myallstars.html'
-#     https: // www.agiliq.com / blog / 2019 / 01 / django - createview /
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+    def get_initial(self, *args, **kwargs):
+        initial = super(my_all_stars, self).get_initial(**kwargs)
+        initial['title'] = 'All Stars'
+        return initial
+
+    def get_form_kwargs(self, *args, **kwargs):
+        kwargs = super(my_all_stars, self).get_form_kwargs(*args, **kwargs)
+        kwargs['user'] = self.request.user
+        return kwargs
