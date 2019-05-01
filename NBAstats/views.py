@@ -1,4 +1,7 @@
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
+from django.utils.decorators import method_decorator
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
@@ -9,6 +12,14 @@ from NBAstats.models import *
 # Create your views here.
 from api.APIrequests import team_request, player_request
 
+# Security Mixins
+
+class LoginRequiredMixin(object):
+    @method_decorator(login_required())
+    def dispatch(self, *args, **kwargs):
+        return super(LoginRequiredMixin, self).dispatch(*args, **kwargs)
+
+# HTML Views
 
 def home(request):
     context = {}
@@ -110,10 +121,10 @@ def all_all_stars(request):
     return render(request, 'NBAstats/all_stars.html', context)
 
 
-class my_all_stars(CreateView):
+class my_all_stars(LoginRequiredMixin, CreateView):
     model = all_star
-    form_class = all_star
-    template_name = 'NBAstats/myallstars.html'
+    form_class = all_stars_form
+    template_name = 'NBAstats/all_stars_form.html'
 
     def get(self, request, *args, **kwargs):
         context = {'form': all_stars_form(request.POST)}
@@ -132,17 +143,15 @@ class my_all_stars(CreateView):
             context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
 
         if context['form'].is_valid():
-            all_star_instance = context['form'].save()
-            all_star_instance.save()
-            return HttpResponseRedirect(reverse_lazy('home'))
+            return self.form_valid(context['form'])
         return render(request, 'NBAstats/all_stars_form.html', context)
 
 
     def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.user = self.request.user
-        self.object.save()
-        return HttpResponseRedirect(self.get_success_url())
+        model_instance = form.save(commit=False)
+        model_instance.user_id = self.request.user
+        model_instance.save()
+        return HttpResponseRedirect(reverse_lazy('home'))
 
     def get_initial(self, *args, **kwargs):
         initial = super(my_all_stars, self).get_initial(**kwargs)
