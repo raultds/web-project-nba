@@ -3,23 +3,23 @@
 {% block content %}
 <h1><center>Welcome to NBA stats</center></h1>
 
-<div class="row">
-  <div class="col-sm-6">
+<ul class="nav justify-content-center">
+  <ul class="nav flex-column">
     <a href="conference/1">
-      <img src="{% static "NBAstats/img/eastlogo.png" %}" style="margin-left: 20em"/>
+      <img src="{% static "NBAstats/img/eastlogo.png" %}"/>
     </a>
-  </div>
-  <div class="col-sm-6">
+  </ul>
+  <ul class="nav flex-column">
     <a href="conference/2">
       <img src="{% static "NBAstats/img/westlogo.png" %}"/>
     </a>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <a href="all_stars">
-      <img src="{% static "NBAstats/img/AllStarsLogo.png" %}" height="300" width="300" style="margin-left: 33em"/>
+  </ul>
+</ul>
+<ul class="nav justify-content-center">
+  <ul class="nav flex-column">
+    <a href="{% url 'my_all_stars' %}">
+      <img src="{% static "NBAstats/img/AllStarsLogo.png" %}" height="300" width="300"/>
     </a>
-  </div>
-</div>
+  </ul>
+</ul>
 {%  endblock %}
