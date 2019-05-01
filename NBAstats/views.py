@@ -99,6 +99,10 @@ class my_done_all_stars(DetailView):
         return context
 
 
+class all_all_stars(DetailView):
+    pass
+
+
 class my_all_stars(CreateView):
     model = all_star
     form_class = all_star
