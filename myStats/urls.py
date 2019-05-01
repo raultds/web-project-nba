@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as djangoViews
 from NBAstats import views
-from NBAstats.views import team_detail, conference_detail, player_detail, team_stats, my_all_stars
+from NBAstats.views import conference_detail, team_stats, team_detail, player_detail, all_stars_update, my_all_stars
 from NBAstats.models import team, player, conference
 from django.views.generic.detail import DetailView
 
@@ -33,4 +33,5 @@ urlpatterns = [
     path('accounts/logout/', djangoViews.LogoutView.as_view(), name='logout'),
     #path('all_stars/', views.all_stars, name='all_stars'),
     path('myallstars/', my_all_stars.as_view(), name='my_all_stars'),
+    path('myallstars/update', all_stars_update.as_view(), name='my_all_stars_update'),
 ]

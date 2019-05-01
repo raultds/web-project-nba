@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
@@ -11,7 +11,13 @@ from api.APIrequests import team_request, player_request
 
 
 def home(request):
-    return render(request, 'NBAstats/home.html', None)
+    context = {}
+    if not request.user.is_authenticated:
+        context['allstars'] = False
+    else:
+        context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
+
+    return render(request, 'NBAstats/home.html', context)
 
 class conference_detail(DetailView):
     model = conference
@@ -79,6 +85,20 @@ class team_stats(DetailView):
         return context
 
 
+class my_done_all_stars(DetailView):
+    model = all_star
+    template_name = 'NBAstats/show_my_all_stars.html'
+    context_object_name = 'all_stars'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = "My All Stars"
+        context['players'] = all_star.objects.filter(user_id=self.request.user)
+        context['allstars'] = True
+        print(context)
+        return context
+
+
 class my_all_stars(CreateView):
     model = all_star
     form_class = all_star
@@ -118,3 +138,35 @@ class all_stars_update(UpdateView):
     model = all_star
     fields = "__all__"
     template_name = 'NBAstats/all_stars_update.html'
+
+    def get_object(self):
+        return self.request.user
+
+    def get(self, request, *args, **kwargs):
+        context = {'form': all_stars_form(request.POST)}
+        return render(request, 'NBAstats/all_stars_update.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = all_stars_form(request.POST)
+        if form.is_valid():
+            all_star_instance = form.save()
+            all_star_instance.save()
+            return HttpResponseRedirect(reverse_lazy('home'))
+        return render(request, 'NBAstats/all_stars_update.html', {'form': form})
+
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+    def get_initial(self, *args, **kwargs):
+        initial = super(my_all_stars, self).get_initial(**kwargs)
+        initial['title'] = 'All Stars'
+        return initial
+
+    def get_form_kwargs(self, *args, **kwargs):
+        kwargs = super(my_all_stars, self).get_form_kwargs(*args, **kwargs)
+        kwargs['user'] = self.request.user
+        return kwargs

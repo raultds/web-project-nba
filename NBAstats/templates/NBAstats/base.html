@@ -12,7 +12,11 @@
         <a class="nav-link" href="{% url 'home' %}?next={{request.path}}">Home</a>
     </ul>
     <ul class="navbar-nav mr-auto">
-        <a class="nav-link" href="{% url 'my_all_stars' %}?next={{request.path}}">MyAllStars</a>
+        {% if allstars %}
+        <a class="nav-link" href="{% url 'my_all_stars_update' %}?next={{request.path}}">MyAllStars</a>
+        {% else %}
+         <a class="nav-link" href="{% url 'my_all_stars' %}?next={{request.path}}">MyAllStars</a>
+        {% endif %}
     </ul>
     <ul class="navbar-nav">
       {% block header %}
