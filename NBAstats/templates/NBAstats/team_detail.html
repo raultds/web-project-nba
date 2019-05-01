@@ -11,11 +11,11 @@
         <li class="nav-item">
           {% if player.player_photo %}
             <a href="player/{{ player.player_id }}">
-              <img src="{{ player.player_photo }}"/>
+              <img src="{{ player.player_photo }}" hspace="10"/>
             </a>
           {% else %}
             <a href="player/{{ player.player_id }}">
-              <img src="{% static "NBAstats/img/silueta.png" %}"/>
+              <img src="{% static "NBAstats/img/silueta.png" %}" hspace="10"/>
             </a>
           {% endif %}
         </li>
