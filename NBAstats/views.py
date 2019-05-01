@@ -19,6 +19,7 @@ def home(request):
 
     return render(request, 'NBAstats/home.html', context)
 
+
 class conference_detail(DetailView):
     model = conference
     template_name = 'NBAstats/conference_detail.html'
@@ -56,18 +57,18 @@ class team_detail(DetailView):
 
 
 class player_detail(DetailView):
-        model = player
-        template_name = 'NBAstats/player_detail.html'
-        context_object_name = 'player'
+    model = player
+    template_name = 'NBAstats/player_detail.html'
+    context_object_name = 'player'
 
-        def get_context_data(self, **kwargs):
-            context = super().get_context_data(**kwargs)
-            context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
-            if not self.request.user.is_authenticated:
-                context['allstars'] = False
-            else:
-                context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
-            return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
+        return context
 
 class team_stats(DetailView):
     model = team
@@ -85,22 +86,28 @@ class team_stats(DetailView):
         return context
 
 
-class my_done_all_stars(DetailView):
-    model = all_star
-    template_name = 'NBAstats/show_my_all_stars.html'
-    context_object_name = 'all_stars'
+def my_done_all_stars(request):
+    context = {}
+    context['my_all_star'] = all_star.objects.filter(user_id=request.user)
+    if not request.user.is_authenticated:
+        context['allstars'] = False
+    else:
+        context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = "My All Stars"
-        context['players'] = all_star.objects.filter(user_id=self.request.user)
-        context['allstars'] = True
-        print(context)
-        return context
+    #TODO
+    return render(request, 'NBAstats/my_all_star.html', context)
 
 
-class all_all_stars(DetailView):
-    pass
+def all_all_stars(request):
+    context = {}
+    context['all_stars_teams'] = all_star.objects.all()
+    if not request.user.is_authenticated:
+        context['allstars'] = False
+    else:
+        context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
+
+    #TODO
+    return render(request, 'NBAstats/all_stars.html', context)
 
 
 class my_all_stars(CreateView):
@@ -110,15 +117,25 @@ class my_all_stars(CreateView):
 
     def get(self, request, *args, **kwargs):
         context = {'form': all_stars_form(request.POST)}
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
         return render(request, 'NBAstats/all_stars_form.html', context)
 
     def post(self, request, *args, **kwargs):
-        form = all_stars_form(request.POST)
-        if form.is_valid():
-            all_star_instance = form.save()
+        context = {}
+        context['form'] = all_stars_form(request.POST)
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
+
+        if context['form'].is_valid():
+            all_star_instance = context['form'].save()
             all_star_instance.save()
             return HttpResponseRedirect(reverse_lazy('home'))
-        return render(request, 'NBAstats/all_stars_form.html', {'form': form})
+        return render(request, 'NBAstats/all_stars_form.html', context)
 
 
     def form_valid(self, form):
@@ -148,15 +165,26 @@ class all_stars_update(UpdateView):
 
     def get(self, request, *args, **kwargs):
         context = {'form': all_stars_form(request.POST)}
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
+
         return render(request, 'NBAstats/all_stars_update.html', context)
 
     def post(self, request, *args, **kwargs):
-        form = all_stars_form(request.POST)
-        if form.is_valid():
-            all_star_instance = form.save()
+        context = {}
+        context['form'] = all_stars_form(request.POST)
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
+
+        if context['form'].is_valid():
+            all_star_instance = context['form'].save()
             all_star_instance.save()
             return HttpResponseRedirect(reverse_lazy('home'))
-        return render(request, 'NBAstats/all_stars_update.html', {'form': form})
+        return render(request, 'NBAstats/all_stars_update.html', context)
 
 
     def form_valid(self, form):

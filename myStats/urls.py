@@ -33,8 +33,8 @@ urlpatterns = [
 	path('accounts/logout/', djangoViews.LogoutView.as_view(), name='logout'),
 	path('myallstars/', my_all_stars.as_view(), name='my_all_stars'),
 	path('myallstars/update', all_stars_update.as_view(), name='my_all_stars_update'),
-	path('myallstars/show', my_done_all_stars.as_view(), name='show_my_all_stars'),
-	path('allstars/', all_all_stars.as_view(), name='all_all_stars'),
+	path('myallstars/show', views.my_done_all_stars, name='show_my_all_stars'),
+	path('allstars/', views.all_all_stars, name='all_all_stars'),
 
 
 ]
