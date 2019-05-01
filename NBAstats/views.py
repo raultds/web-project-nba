@@ -30,6 +30,27 @@ def home(request):
 
     return render(request, 'NBAstats/home.html', context)
 
+def my_done_all_stars(request):
+    context = {}
+    context['user_team'] = all_star.objects.filter(user_id=request.user)
+    if not request.user.is_authenticated:
+        context['allstars'] = False
+    else:
+        context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
+
+    #TODO
+    return render(request, 'NBAstats/my_all_star.html', context)
+
+def all_all_stars(request):
+    context = {}
+    context['all_stars_teams'] = all_star.objects.all()
+    if not request.user.is_authenticated:
+        context['allstars'] = False
+    else:
+        context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
+
+    #TODO
+    return render(request, 'NBAstats/all_stars.html', context)
 
 class conference_detail(DetailView):
     model = conference
@@ -96,29 +117,19 @@ class team_stats(DetailView):
             context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
         return context
 
+class user_all_stars(DetailView):
+    model = all_star
+    template_name = 'NBAstats/user_all_star.html'
+    context_object_name = 'user_team'
 
-def my_done_all_stars(request):
-    context = {}
-    context['my_all_star'] = all_star.objects.filter(user_id=request.user)
-    if not request.user.is_authenticated:
-        context['allstars'] = False
-    else:
-        context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-    #TODO
-    return render(request, 'NBAstats/my_all_star.html', context)
-
-
-def all_all_stars(request):
-    context = {}
-    context['all_stars_teams'] = all_star.objects.all()
-    if not request.user.is_authenticated:
-        context['allstars'] = False
-    else:
-        context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
-
-    #TODO
-    return render(request, 'NBAstats/all_stars.html', context)
+        if not self.request.user.is_authenticated:
+            context['allstars'] = False
+        else:
+            context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
+        return context
 
 
 class my_all_stars(LoginRequiredMixin, CreateView):

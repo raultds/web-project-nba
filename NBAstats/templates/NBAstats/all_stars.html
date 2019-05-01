@@ -3,6 +3,6 @@
 {% block content %}
     <h1><center/>All Stars Community Teams<center/></h1>
     {% for x in all_stars_teams %}
-      <h4><center>Usuari: {{x.user_id.username}}<center/></h4>
+      <h4><center><a href="user/{{ x.pk }}"> Usuari: {{x.user_id.username}}</a><center/></h4>
     {% endfor %}
 {%  endblock %}
