@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from NBAstats.forms import all_stars_form
 from NBAstats.models import *
@@ -79,15 +79,6 @@ class team_stats(DetailView):
         return context
 
 
-""""
-def all_stars(request):
-    all_stars_teams = all_star.objects.all()
-    return render(request, 'NBAstats/all_stars.html', {'all_stars_teams' : all_stars_teams})
-
-def my_all_stars(request):
-    return render(request, 'NBAstats/myallstars.html', None)
-"""
-
 class my_all_stars(CreateView):
     model = all_star
     form_class = all_star
@@ -121,3 +112,9 @@ class my_all_stars(CreateView):
         kwargs = super(my_all_stars, self).get_form_kwargs(*args, **kwargs)
         kwargs['user'] = self.request.user
         return kwargs
+
+
+class all_stars_update(UpdateView):
+    model = all_star
+    fields = "__all__"
+    template_name = 'NBAstats/all_stars_update.html'

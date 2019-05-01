@@ -23,7 +23,7 @@ class team(models.Model):
     team_city = models.CharField(blank=True, null=True, max_length=20)
     team_name = models.CharField(blank=True, null=True, max_length=15)
     conference = models.ForeignKey(conference, default=1 ,on_delete=models.CASCADE)
-    image_path = models.CharField(blank=True, null=True, max_length=30, default='a')
+    image_path = models.ImageField(upload_to="NBAstats", blank=True, null=True)
     def __str__(self):
         return self.team_city + ' ' + self.team_name
 
