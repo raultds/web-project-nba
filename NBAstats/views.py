@@ -141,9 +141,11 @@ class my_all_stars(LoginRequiredMixin, CreateView):
         context = {'form': all_stars_form(request.POST)}
         if not self.request.user.is_authenticated:
             context['allstars'] = False
+            return render(request, 'NBAstats/all_stars_form.html', context)
         else:
+            context['user_team'] = all_star.objects.filter(user_id=request.user)
             context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
-        return render(request, 'NBAstats/all_stars_form.html', context)
+            return render(request, 'NBAstats/my_all_star.html', context)
 
     def post(self, request, *args, **kwargs):
         context = {}
@@ -155,6 +157,7 @@ class my_all_stars(LoginRequiredMixin, CreateView):
 
         if context['form'].is_valid():
             return self.form_valid(context['form'])
+
         return render(request, 'NBAstats/all_stars_form.html', context)
 
 
@@ -162,7 +165,7 @@ class my_all_stars(LoginRequiredMixin, CreateView):
         model_instance = form.save(commit=False)
         model_instance.user_id = self.request.user
         model_instance.save()
-        return HttpResponseRedirect(reverse_lazy('home'))
+        return HttpResponseRedirect(reverse_lazy('show_my_all_stars'))
 
     def get_initial(self, *args, **kwargs):
         initial = super(my_all_stars, self).get_initial(**kwargs)
