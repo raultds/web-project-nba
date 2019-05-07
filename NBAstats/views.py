@@ -23,6 +23,7 @@ class LoginRequiredMixin(object):
 
 def home(request):
     context = {}
+    context['title'] = 'Home'
     if not request.user.is_authenticated:
         context['allstars'] = False
     else:
@@ -33,6 +34,7 @@ def home(request):
 
 def my_done_all_stars(request):
     context = {}
+    context['title'] = 'MyAllStars'
     context['user_team'] = all_star.objects.filter(user_id=request.user)
     if not request.user.is_authenticated:
         context['allstars'] = False
@@ -44,13 +46,13 @@ def my_done_all_stars(request):
 
 def all_all_stars(request):
     context = {}
+    context['title'] = 'Community All Stars'
     context['all_stars_teams'] = all_star.objects.all()
     if not request.user.is_authenticated:
         context['allstars'] = False
     else:
         context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
 
-    #TODO
     return render(request, 'NBAstats/all_stars.html', context)
 
 class conference_detail(DetailView):
@@ -97,6 +99,7 @@ class player_detail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['title'] = context['player'].name
         if not self.request.user.is_authenticated:
             context['allstars'] = False
         else:
