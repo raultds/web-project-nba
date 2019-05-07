@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc85c44d-c5b0-46fd-8c37-d0f496cdec4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/boto.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/web-project-nba.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/web-project-nba.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBAstats/templates/NBAstats/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/NBAstats/templates/NBAstats/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NBAstats/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NBAstats/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +19,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NBAstats/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="151" column="69" selection-start-line="151" selection-start-column="69" selection-end-line="151" selection-end-column="69" />
+            <state relative-caret-position="-867">
+              <caret line="101" column="49" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_star_confirm_delete.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -34,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myStats/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            <state relative-caret-position="328">
+              <caret line="37" column="35" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="35" />
               <folding>
                 <element signature="e#631#663#0" expanded="true" />
               </folding>
@@ -44,66 +47,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/base.html">
+        <entry file="file://$PROJECT_DIR$/myStats/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/team_detail.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_update.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/boto.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/conference_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            <state relative-caret-position="93">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#li#1;n#ul#0;n#ul#0;n#!!top" expanded="true" />
+                <element signature="e#309#318#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/player_detail.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/my_all_star.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="2" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -119,6 +98,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>allstars</find>
+      <find>login</find>
+      <find>all_all</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,10 +116,13 @@
         <option value="$PROJECT_DIR$/NBAstats/templates/NBAstats/conference_detail.html" />
         <option value="$PROJECT_DIR$/NBAstats/models.py" />
         <option value="$PROJECT_DIR$/NBAstats/templates/NBAstats/show_my_all_stars.html" />
-        <option value="$PROJECT_DIR$/myStats/urls.py" />
-        <option value="$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_form.html" />
         <option value="$PROJECT_DIR$/assets/css/boto.css" />
         <option value="$PROJECT_DIR$/NBAstats/templates/NBAstats/base.html" />
+        <option value="$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_form.html" />
+        <option value="$PROJECT_DIR$/NBAstats/templates/NBAstats/my_all_star.html" />
+        <option value="$PROJECT_DIR$/myStats/urls.py" />
+        <option value="$PROJECT_DIR$/NBAstats/templates/NBAstats/all_star_confirm_delete.html" />
+        <option value="$PROJECT_DIR$/myStats/settings.py" />
         <option value="$PROJECT_DIR$/NBAstats/views.py" />
       </list>
     </option>
@@ -164,12 +148,37 @@
             <path>
               <item name="web-project-nba" type="b2602c69:ProjectViewProjectNode" />
               <item name="web-project-nba" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project-nba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project-nba" type="462c0819:PsiDirectoryNode" />
               <item name="myStats" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="web-project-nba" type="b2602c69:ProjectViewProjectNode" />
               <item name="web-project-nba" type="462c0819:PsiDirectoryNode" />
               <item name="NBAstats" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project-nba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project-nba" type="462c0819:PsiDirectoryNode" />
+              <item name="NBAstats" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project-nba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project-nba" type="462c0819:PsiDirectoryNode" />
+              <item name="NBAstats" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="NBAstats" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web-project-nba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web-project-nba" type="462c0819:PsiDirectoryNode" />
+              <item name="NBAstats" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -235,7 +244,7 @@
       <option name="presentableId" value="Default" />
       <updated>1556607715209</updated>
       <workItem from="1556607717154" duration="5208000" />
-      <workItem from="1557212623242" duration="1050000" />
+      <workItem from="1557212623242" duration="4659000" />
     </task>
     <task id="LOCAL-00001" summary="Afegit path models">
       <created>1556610298372</created>
@@ -279,22 +288,43 @@
       <option name="project" value="LOCAL" />
       <updated>1556701018391</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed all stars">
+      <created>1557213735443</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1557213735443</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Afegit delete all star">
+      <created>1557216533166</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1557216533166</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fixed login logout redirects">
+      <created>1557217075358</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557217075358</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11740000" />
+    <option name="totallyTimeSpent" value="15349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26153848" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26153848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26642984" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5079929" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,19 +392,12 @@
     <MESSAGE value="Form all stars fet" />
     <MESSAGE value="Fixed model" />
     <MESSAGE value="Update i base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update i base" />
+    <MESSAGE value="Fixed all stars" />
+    <MESSAGE value="Afegit delete all star" />
+    <MESSAGE value="Fixed login logout redirects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed login logout redirects" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/myStats/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-          <folding>
-            <element signature="e#309#318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -404,9 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/show_my_all_stars.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/team_stats.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -430,7 +450,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/boto.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/team_detail.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/show_my_all_stars.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NBAstats/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/user_all_star.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_update.html">
@@ -440,44 +487,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/my_all_star.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_star_confirm_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myStats/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#309#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/boto.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/all_stars_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myStats/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="328">
+          <caret line="37" column="35" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="35" />
           <folding>
             <element signature="e#631#663#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NBAstats/templates/NBAstats/base.html">
+    <entry file="file://$PROJECT_DIR$/api/APIrequests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NBAstats/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="151" column="69" selection-start-line="151" selection-start-column="69" selection-end-line="151" selection-end-column="69" />
+        <state relative-caret-position="-867">
+          <caret line="101" column="49" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
         </state>
       </provider>
     </entry>

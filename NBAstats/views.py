@@ -4,13 +4,13 @@ from django.core.exceptions import PermissionDenied
 from django.utils.decorators import method_decorator
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from NBAstats.forms import all_stars_form, all_stars_update_form
 from NBAstats.models import *
 
 # Create your views here.
-from api.APIrequests import team_request, player_request
+from api.APIrequests import *
 
 # Security Mixins
 
@@ -23,6 +23,7 @@ class LoginRequiredMixin(object):
 
 def home(request):
     context = {}
+    context['title'] = 'Home'
     if not request.user.is_authenticated:
         context['allstars'] = False
     else:
@@ -31,15 +32,30 @@ def home(request):
 
     return render(request, 'NBAstats/home.html', context)
 
-def all_all_stars(request):
+<<<<<<< HEAD
+=======
+def my_done_all_stars(request):
     context = {}
-    context['all_stars_teams'] = all_star.objects.all()
+    context['title'] = 'MyAllStars'
+    context['user_team'] = all_star.objects.filter(user_id=request.user)
     if not request.user.is_authenticated:
         context['allstars'] = False
     else:
         context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
 
     #TODO
+    return render(request, 'NBAstats/my_all_star.html', context)
+
+>>>>>>> 7ba1d2c6731bf16a5b6c4157ff6106b595a96aea
+def all_all_stars(request):
+    context = {}
+    context['title'] = 'Community All Stars'
+    context['all_stars_teams'] = all_star.objects.all()
+    if not request.user.is_authenticated:
+        context['allstars'] = False
+    else:
+        context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
+
     return render(request, 'NBAstats/all_stars.html', context)
 
 class conference_detail(DetailView):
@@ -70,7 +86,6 @@ class team_detail(DetailView):
 
         context['players'] = player.objects.filter(team_name=context['team'].team_name)
         context['title'] = context['team'].team_name
-        context['stats'] = team_request(context['team'].team_id)
         if not self.request.user.is_authenticated:
             context['allstars'] = False
         else:
@@ -86,6 +101,7 @@ class player_detail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['title'] = context['player'].name
         if not self.request.user.is_authenticated:
             context['allstars'] = False
         else:
@@ -100,7 +116,10 @@ class team_stats(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = context['team'].team_name
-        context['stats'] = team_request(context['team'].team_id)
+        context['results'] = team_results_request(context['team'].team_id)
+        context['2points'] = team_2pts_request(context['team'].team_id)
+        context['3points'] = team_3pts_request(context['team'].team_id)
+        context['fgpoints'] = team_fgs_request(context['team'].team_id)
         if not self.request.user.is_authenticated:
             context['allstars'] = False
         else:
@@ -198,7 +217,16 @@ class all_stars_update(UpdateView):
             context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
 
         if context['form'].is_valid():
+<<<<<<< HEAD
             return self.form_valid(context['form'])
+=======
+            print(request)
+            print(context['form'])
+            all_star_instance = context['form'].save()
+            all_star_instance.save()
+            return HttpResponseRedirect(reverse_lazy('home'))
+        return render(request, 'NBAstats/all_stars_update.html', context)
+>>>>>>> 7ba1d2c6731bf16a5b6c4157ff6106b595a96aea
 
         return render(request, 'NBAstats/all_stars_update_form.html', context)
 
@@ -217,3 +245,11 @@ class all_stars_update(UpdateView):
         kwargs = super(my_all_stars, self).get_form_kwargs(*args, **kwargs)
         kwargs['user'] = self.request.user
         return kwargs
+
+
+class all_stars_delete(DeleteView):
+    model = all_star
+    success_url = reverse_lazy('home')
+
+    def get_object(self):
+        return all_star.objects.filter(user_id=self.request.user)
