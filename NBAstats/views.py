@@ -80,7 +80,6 @@ class team_detail(DetailView):
 
         context['players'] = player.objects.filter(team_name=context['team'].team_name)
         context['title'] = context['team'].team_name
-        context['stats'] = team_request(context['team'].team_id)
         if not self.request.user.is_authenticated:
             context['allstars'] = False
         else:
