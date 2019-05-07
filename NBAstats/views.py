@@ -4,7 +4,7 @@ from django.core.exceptions import PermissionDenied
 from django.utils.decorators import method_decorator
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from NBAstats.forms import all_stars_form
 from NBAstats.models import *
@@ -208,6 +208,8 @@ class all_stars_update(UpdateView):
             context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
 
         if context['form'].is_valid():
+            print(request)
+            print(context['form'])
             all_star_instance = context['form'].save()
             all_star_instance.save()
             return HttpResponseRedirect(reverse_lazy('home'))
@@ -229,3 +231,11 @@ class all_stars_update(UpdateView):
         kwargs = super(my_all_stars, self).get_form_kwargs(*args, **kwargs)
         kwargs['user'] = self.request.user
         return kwargs
+
+
+class all_stars_delete(DeleteView):
+    model = all_star
+    success_url = reverse_lazy('home')
+
+    def get_object(self):
+        return all_star.objects.filter(user_id=self.request.user)
