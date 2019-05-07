@@ -1,5 +1,9 @@
 {%  extends 'NBAstats/base.html' %}
 {% load static %}
+{% block header %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/boto.css' %}">
+{% endblock header %}
+
 {% block content %}
 
 <form method="POST" action=".">
@@ -9,7 +13,9 @@
         {{ form.as_table }}
 
     </table>
-    <input type="submit" />
+    <a class="btn btn-lg btn-block mt-3 text-button">
+        <input type="submit" />
+    </a>
 </form>
 
 {%  endblock %}

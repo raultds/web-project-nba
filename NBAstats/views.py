@@ -28,6 +28,7 @@ def home(request):
     else:
         context['allstars'] = all_star.objects.filter(user_id=request.user).exists()
 
+
     return render(request, 'NBAstats/home.html', context)
 
 def my_done_all_stars(request):
@@ -145,7 +146,10 @@ class my_all_stars(LoginRequiredMixin, CreateView):
         else:
             context['user_team'] = all_star.objects.filter(user_id=request.user)
             context['allstars'] = all_star.objects.filter(user_id=self.request.user).exists()
-            return render(request, 'NBAstats/my_all_star.html', context)
+            if context['allstars']==True:
+                return render(request, 'NBAstats/my_all_star.html', context)
+            else:
+                return render(request, 'NBAstats/all_stars_form.html', context)
 
     def post(self, request, *args, **kwargs):
         context = {}
