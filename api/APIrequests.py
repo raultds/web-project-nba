@@ -3,7 +3,7 @@ import json
 
 from pip._vendor import requests
 
-# list_stats = ['OffReb', 'OffRebPerGame', 'DefReb', 'DefRebPerGame', 'Reb', 'RebPerGame', 'Ast', 'AstPerGame', 'Pts', 'PtsPerGame', 'Tov', 'TovPerGame', 'Stl', 'StlPerGame', 'Blk', 'BlkPerGame', 'BlkAgainst', 'BlkAgainstPerGame', 'PtsAgainst', 'PtsAgainstPerGame', 'Fouls', 'FoulsPerGame', 'FoulPers', 'FoulPersPerGame', 'FoulTech', 'FoulTechPerGame', 'PlusMinus', 'PlusMinusPerGame', 'FoulsDrawn', 'FoulsDrawnPerGame', 'FoulPersDrawn', 'FoulPersDrawnPerGame', 'FoulTechDrawn', 'FoulTechDrawnPerGame', 'FoulFlag1', 'FoulFlag1PerGame', 'FoulFlag1Drawn', 'FoulFlag1DrawnPerGame', 'FoulFlag2', 'FoulFlag2PerGame', 'FoulFlag2Drawn', 'FoulFlag2DrawnPerGame', 'Ejections']
+
 def stats_request(list_stats, id):
     try:
         response = requests.get("https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/overall_team_standings.json",
@@ -43,6 +43,22 @@ def team_fgs_request(id):
 
 def team_fts_request(id):
     list_stats = ['FtAtt', 'FtAttPerGame', 'FtMade', 'FtMadePerGame', 'FtPct']
+    return(stats_request(list_stats,id))
+
+def team_rebounds_request(id):
+    list_stats = ['OffReb', 'OffRebPerGame', 'DefReb', 'DefRebPerGame', 'Reb', 'RebPerGame']
+    return(stats_request(list_stats,id))
+
+def team_offensive_request(id):
+    list_stats = [ 'Pts', 'PtsPerGame', 'Ast', 'AstPerGame']
+    return(stats_request(list_stats,id))
+
+def team_deffensive_request(id):
+    list_stats = ['Tov', 'TovPerGame', 'Stl', 'StlPerGame', 'Blk', 'BlkPerGame', 'BlkAgainst', 'BlkAgainstPerGame', 'PtsAgainst', 'PtsAgainstPerGame']
+    return(stats_request(list_stats,id))
+
+def team_fouls_request(id):
+    list_stats = ['Fouls', 'FoulsPerGame', 'FoulPers', 'FoulPersPerGame', 'Ejections']
     return(stats_request(list_stats,id))
 
 def player_request(firstName, lastName, playerID):

@@ -23,4 +23,24 @@
     {% for fgpoint, value in fgpoints.items %}
         <h4>{{fgpoint}}:  {{value}}</h4>
     {% endfor %}
+    <h2>Ft Stats</h2>
+    {% for ftpoint, value in ftpoints.items %}
+        <h4>{{ftpoint}}:  {{value}}</h4>
+    {% endfor %}
+    <h2>Rebound Stats</h2>
+    {% for rebound, value in rebounds.items %}
+        <h4>{{rebound}}:  {{value}}</h4>
+    {% endfor %}
+    <h2>Offensive Stats</h2>
+    {% for off, value in offs.items %}
+        <h4>{{off}}:  {{value}}</h4>
+    {% endfor %}
+    <h2>Defensive Stats</h2>
+    {% for def, value in defs.items %}
+        <h4>{{def}}:  {{value}}</h4>
+    {% endfor %}
+    <h2>Fouls Stats</h2>
+    {% for foul, value in fouls.items %}
+        <h4>{{foul}}:  {{value}}</h4>
+    {% endfor %}
 {% endblock %}

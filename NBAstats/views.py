@@ -117,6 +117,11 @@ class team_stats(DetailView):
         context['2points'] = team_2pts_request(context['team'].team_id)
         context['3points'] = team_3pts_request(context['team'].team_id)
         context['fgpoints'] = team_fgs_request(context['team'].team_id)
+        context['ftpoints'] = team_fts_request(context['team'].team_id)
+        context['rebounds'] = team_rebounds_request(context['team'].team_id)
+        context['offs'] = team_offensive_request(context['team'].team_id)
+        context['defs'] = team_deffensive_request(context['team'].team_id)
+        context['fouls'] = team_fouls_request(context['team'].team_id)
         if not self.request.user.is_authenticated:
             context['allstars'] = False
         else:
