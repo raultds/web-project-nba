@@ -10,7 +10,7 @@ from NBAstats.forms import all_stars_form
 from NBAstats.models import *
 
 # Create your views here.
-from api.APIrequests import team_request, player_request
+from api.APIrequests import *
 
 # Security Mixins
 
@@ -110,7 +110,10 @@ class team_stats(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = context['team'].team_name
-        context['stats'] = team_request(context['team'].team_id)
+        context['results'] = team_results_request(context['team'].team_id)
+        context['2points'] = team_2pts_request(context['team'].team_id)
+        context['3points'] = team_3pts_request(context['team'].team_id)
+        context['fgpoints'] = team_fgs_request(context['team'].team_id)
         if not self.request.user.is_authenticated:
             context['allstars'] = False
         else:

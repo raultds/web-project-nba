@@ -1,7 +1,26 @@
 {%  extends 'NBAstats/base.html' %}
 {% block content %}
-    <h1>{{team.team_city}} {{ team.team_name }}</h1>
-    {% for stat, value in stats.items %}
-        <h4>{{stat}}:  {{value}}</h4>
+
+    <ul class="navbar">
+      <ul class="nav mr-auto justify-content-center">
+        <img src="{{ team.image_path }}" height="65" width="65" hspace="20"/>
+        <h1>{{team.team_city}} {{ team.team_name }}</h1>
+      </ul>
+    </ul>
+    <h2>Team Results</h2>
+    {% for result, value in results.items %}
+        <h4>{{result}}:  {{value}}</h4>
+    {% endfor %}
+    <h2>Fg2 Stats</h2>
+    {% for 2point, value in 2points.items %}
+        <h4>{{2point}}:  {{value}}</h4>
+    {% endfor %}
+    <h2>Fg3 Stats</h2>
+    {% for 3point, value in 3points.items %}
+        <h4>{{3point}}:  {{value}}</h4>
+    {% endfor %}
+    <h2>Fg Stats</h2>
+    {% for fgpoint, value in fgpoints.items %}
+        <h4>{{fgpoint}}:  {{value}}</h4>
     {% endfor %}
 {% endblock %}
