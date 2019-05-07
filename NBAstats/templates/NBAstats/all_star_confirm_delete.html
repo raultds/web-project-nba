@@ -1,0 +1,12 @@
+{%  extends 'NBAstats/base.html' %}
+{% load static %}
+{% block content %}
+
+<form action="" method="post">{% csrf_token %}
+    <p>Estàs segur que vols borrar el teu all star?</p>
+
+    <input type="submit" class="btn btn-danger" value="Esborrar" />
+    <a class="btn btn-success" href="{% url 'my_all_stars' %}">Cancel·lar</a>
+
+</form>
+{% endblock %}
