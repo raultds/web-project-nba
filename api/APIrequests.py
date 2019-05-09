@@ -25,41 +25,51 @@ def stats_request(list_stats, id):
     except requests.exceptions.RequestException:
         return(0)
 
+
 def team_results_request(id):
     list_stats = ['GamesPlayed', 'Wins', 'Losses', 'WinPct']
     return(stats_request(list_stats,id))
+
 
 def team_2pts_request(id):
     list_stats = ['Fg2PtAtt', 'Fg2PtAttPerGame', 'Fg2PtMade', 'Fg2PtMadePerGame', 'Fg2PtPct']
     return(stats_request(list_stats,id))
 
+
 def team_3pts_request(id):
     list_stats = ['Fg3PtAtt', 'Fg3PtAttPerGame', 'Fg3PtMade', 'Fg3PtMadePerGame', 'Fg3PtPct']
     return(stats_request(list_stats,id))
+
 
 def team_fgs_request(id):
     list_stats = ['FgAtt', 'FgAttPerGame', 'FgMade', 'FgMadePerGame', 'FgPct']
     return(stats_request(list_stats,id))
 
+
 def team_fts_request(id):
     list_stats = ['FtAtt', 'FtAttPerGame', 'FtMade', 'FtMadePerGame', 'FtPct']
     return(stats_request(list_stats,id))
+
 
 def team_rebounds_request(id):
     list_stats = ['OffReb', 'OffRebPerGame', 'DefReb', 'DefRebPerGame', 'Reb', 'RebPerGame']
     return(stats_request(list_stats,id))
 
+
 def team_offensive_request(id):
     list_stats = [ 'Pts', 'PtsPerGame', 'Ast', 'AstPerGame']
     return(stats_request(list_stats,id))
+
 
 def team_deffensive_request(id):
     list_stats = ['Tov', 'TovPerGame', 'Stl', 'StlPerGame', 'Blk', 'BlkPerGame', 'BlkAgainst', 'BlkAgainstPerGame', 'PtsAgainst', 'PtsAgainstPerGame']
     return(stats_request(list_stats,id))
 
+
 def team_fouls_request(id):
     list_stats = ['Fouls', 'FoulsPerGame', 'FoulPers', 'FoulPersPerGame', 'Ejections']
     return(stats_request(list_stats,id))
+
 
 def player_request(firstName, lastName, playerID):
     list_stats = ['GamesPlayed', 'Fg2PtAtt', 'Fg2PtAttPerGame', 'Fg2PtMade', 'Fg2PtMadePerGame', 'Fg2PtPct', 'Fg3PtAtt', 'Fg3PtAttPerGame', 'Fg3PtMade', 'Fg3PtMadePerGame', 'Fg3PtPct', 'FgAtt', 'FgAttPerGame', 'FgMade', 'FgMadePerGame', 'FgPct', 'FtAtt', 'FtAttPerGame', 'FtMade', 'FtMadePerGame', 'FtPct', 'OffReb', 'OffRebPerGame', 'DefReb', 'DefRebPerGame', 'Reb', 'RebPerGame', 'Ast', 'AstPerGame', 'Pts', 'PtsPerGame', 'Tov', 'TovPerGame', 'Stl', 'StlPerGame', 'Fouls', 'FoulsPerGame', 'FoulTech', 'FoulFlag1', 'FoulFlag2']
