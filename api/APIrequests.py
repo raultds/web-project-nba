@@ -71,7 +71,7 @@ def team_fouls_request(id):
     return(stats_request(list_stats,id))
 
 
-def player_request(firstName, lastName, playerID):
+def player_request(firstName, lastName, playerID, list_stats):
     list_stats = ['GamesPlayed', 'Fg2PtAtt', 'Fg2PtAttPerGame', 'Fg2PtMade', 'Fg2PtMadePerGame', 'Fg2PtPct', 'Fg3PtAtt', 'Fg3PtAttPerGame', 'Fg3PtMade', 'Fg3PtMadePerGame', 'Fg3PtPct', 'FgAtt', 'FgAttPerGame', 'FgMade', 'FgMadePerGame', 'FgPct', 'FtAtt', 'FtAttPerGame', 'FtMade', 'FtMadePerGame', 'FtPct', 'OffReb', 'OffRebPerGame', 'DefReb', 'DefRebPerGame', 'Reb', 'RebPerGame', 'Ast', 'AstPerGame', 'Pts', 'PtsPerGame', 'Tov', 'TovPerGame', 'Stl', 'StlPerGame', 'Fouls', 'FoulsPerGame', 'FoulTech', 'FoulFlag1', 'FoulFlag2']
     try:
         response = requests.get("https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/cumulative_player_stats.json",
@@ -92,3 +92,43 @@ def player_request(firstName, lastName, playerID):
 
     except requests.exceptions.RequestException:
         return(0)
+
+
+def player_2pts_request(firstName, lastName, playerID):
+    list_stats = ['Fg2PtAtt', 'Fg2PtAttPerGame', 'Fg2PtMade', 'Fg2PtMadePerGame', 'Fg2PtPct']
+    return(player_request(firstName, lastName, playerID, list_stats))
+
+
+def player_3pts_request(firstName, lastName, playerID):
+    list_stats = ['Fg3PtAtt', 'Fg3PtAttPerGame', 'Fg3PtMade', 'Fg3PtMadePerGame', 'Fg3PtPct']
+    return(player_request(firstName, lastName, playerID, list_stats))
+
+
+def player_fgs_request(firstName, lastName, playerID):
+    list_stats = ['FgAtt', 'FgAttPerGame', 'FgMade', 'FgMadePerGame', 'FgPct']
+    return(player_request(firstName, lastName, playerID, list_stats))
+
+
+def player_fts_request(firstName, lastName, playerID):
+    list_stats = ['FtAtt', 'FtAttPerGame', 'FtMade', 'FtMadePerGame', 'FtPct']
+    return(player_request(firstName, lastName, playerID, list_stats))
+
+
+def player_rebounds_request(firstName, lastName, playerID):
+    list_stats = ['OffReb', 'OffRebPerGame', 'DefReb', 'DefRebPerGame', 'Reb', 'RebPerGame']
+    return(player_request(firstName, lastName, playerID, list_stats))
+
+
+def player_offensive_request(firstName, lastName, playerID):
+    list_stats = [ 'Pts', 'PtsPerGame', 'Ast', 'AstPerGame']
+    return(player_request(firstName, lastName, playerID, list_stats))
+
+
+def player_deffensive_request(firstName, lastName, playerID):
+    list_stats = ['Tov', 'TovPerGame', 'Stl', 'StlPerGame']
+    return(player_request(firstName, lastName, playerID, list_stats))
+
+
+def player_fouls_request(firstName, lastName, playerID):
+    list_stats = ['Fouls', 'FoulsPerGame', 'FoulTech', 'FoulFlag1', 'FoulFlag2']
+    return(player_request(firstName, lastName, playerID, list_stats))
