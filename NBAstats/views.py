@@ -85,8 +85,15 @@ class player_detail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['stats'] = player_request(context['player'].name, context['player'].last_name, context['player'].player_id)
         context['title'] = context['player'].name
+        context['2points'] = player_2pts_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['3points'] = player_3pts_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['fgpoints'] = player_fgs_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['ftpoints'] = player_fts_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['rebounds'] = player_rebounds_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['offs'] = player_offensive_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['defs'] = player_deffensive_request(context['player'].name, context['player'].last_name, context['player'].player_id)
+        context['fouls'] = player_fouls_request(context['player'].name, context['player'].last_name, context['player'].player_id)
         if not self.request.user.is_authenticated:
             context['allstars'] = False
         else:
