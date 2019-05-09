@@ -72,7 +72,6 @@ def team_fouls_request(id):
 
 
 def player_request(firstName, lastName, playerID, list_stats):
-    list_stats = ['GamesPlayed', 'Fg2PtAtt', 'Fg2PtAttPerGame', 'Fg2PtMade', 'Fg2PtMadePerGame', 'Fg2PtPct', 'Fg3PtAtt', 'Fg3PtAttPerGame', 'Fg3PtMade', 'Fg3PtMadePerGame', 'Fg3PtPct', 'FgAtt', 'FgAttPerGame', 'FgMade', 'FgMadePerGame', 'FgPct', 'FtAtt', 'FtAttPerGame', 'FtMade', 'FtMadePerGame', 'FtPct', 'OffReb', 'OffRebPerGame', 'DefReb', 'DefRebPerGame', 'Reb', 'RebPerGame', 'Ast', 'AstPerGame', 'Pts', 'PtsPerGame', 'Tov', 'TovPerGame', 'Stl', 'StlPerGame', 'Fouls', 'FoulsPerGame', 'FoulTech', 'FoulFlag1', 'FoulFlag2']
     try:
         response = requests.get("https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/cumulative_player_stats.json",
             params={
