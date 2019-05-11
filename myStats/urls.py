@@ -17,24 +17,23 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as djangoViews
 from NBAstats import views
-from NBAstats.views import conference_detail, team_stats, team_detail, player_detail, all_stars_update, my_all_stars, all_all_stars, user_all_stars, all_stars_delete
-from NBAstats.models import team, player, conference
+from NBAstats.views import ConferenceDetail, TeamStats, TeamDetail, PlayerDetail, AllStarsUpdate, MyAllStars, \
+	AllAllStars, UserAllStars, AllStarsDelete
+from NBAstats.models import Team, Player, Conference
 from django.views.generic.detail import DetailView
 
 urlpatterns = [
 	path('admin/', admin.site.urls),
-	path('', views.home, name="home"),
-	path('conference/<int:pk>', conference_detail.as_view(), name='conference_detail'),
-	path('conference/team/stats/<int:pk>', team_stats.as_view(), name='team_stats'),
-	path('conference/team/<int:pk>', team_detail.as_view(), name='team_detail'),
-	path('conference/team/player/<int:pk>', player_detail.as_view(), name='player_detail'),
+	path('', views.Home, name="home"),
+	path('conference/<int:pk>', ConferenceDetail.as_view(), name='conference_detail'),
+	path('conference/team/stats/<int:pk>', TeamStats.as_view(), name='team_stats'),
+	path('conference/team/<int:pk>', TeamDetail.as_view(), name='team_detail'),
+	path('conference/team/player/<int:pk>', PlayerDetail.as_view(), name='player_detail'),
 	path('accounts/login/', djangoViews.LoginView.as_view(), name='login'),
 	path('accounts/logout/', djangoViews.LogoutView.as_view(), name='logout'),
-	path('myallstars/', my_all_stars.as_view(), name='my_all_stars'),
-	path('myallstars/update', all_stars_update.as_view(), name='my_all_stars_update'),
-	path('myallstars/delete', all_stars_delete.as_view(), name='my_all_stars_delete'),
-	path('allstars/', views.all_all_stars, name='all_all_stars'),
-    path('allstars/user/<int:pk>', user_all_stars.as_view(), name='user_all_stars'),
-
-
+	path('myallstars/', MyAllStars.as_view(), name='my_all_stars'),
+	path('myallstars/update', AllStarsUpdate.as_view(), name='my_all_stars_update'),
+	path('myallstars/delete', AllStarsDelete.as_view(), name='my_all_stars_delete'),
+	path('allstars/', views.AllAllStars, name='all_all_stars'),
+	path('allstars/user/<int:pk>', UserAllStars.as_view(), name='user_all_stars'),
 ]
