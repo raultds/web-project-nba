@@ -40,8 +40,6 @@ Here you have some considerations about how to run the project in your local mac
   Username: prova
 
   Password: nba123456789
-  
-  There are some more created users that are not specified here, because you can explore all the functionalities with just one of them.
 
   ### As an Admin
 
@@ -49,9 +47,9 @@ Here you have some considerations about how to run the project in your local mac
 
   Password: nbastats1234
 
-### Deployed
+### Deploy
+
   We deployed our application to Heroku.
-  
   Link: https://nbastats.herokuapp.com/
 
 ## Design decisions
@@ -81,6 +79,10 @@ Strictly separate build and run stages.
 We have created 3 different models, which are conference', team' and 'player'. This is, also, the distribution that we have done with the information.
 
 And a fourth one, which is the All-Star team one.
+
+### Models
+
+We have created 3 different models, which are conference', team' and 'player'. This is, also, the distribution that we have done with the information.
 
 ### Data access
 
