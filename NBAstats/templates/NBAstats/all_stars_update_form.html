@@ -1,0 +1,13 @@
+{%  extends 'NBAstats/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <a class="btn btn-lg btn-block mt-3 text-button">
+        <input type="submit" value="Update" />
+    </a>
+</form>
+
+{%  endblock %}

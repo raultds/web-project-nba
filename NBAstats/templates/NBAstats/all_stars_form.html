@@ -1,0 +1,16 @@
+{%  extends 'NBAstats/base.html' %}
+{% load static %}
+{% block content %}
+
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <table>
+
+            {{ form.as_p }}
+
+        </table>
+        <input type="submit" value="Registrar" />
+    </form>
+
+
+    {%  endblock %}

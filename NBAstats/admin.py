@@ -2,6 +2,7 @@ from django.contrib import admin
 from NBAstats import models
 from django.contrib.auth.models import User
 # Register your models here.
-admin.site.register(models.team)
-admin.site.register(models.player)
-admin.site.register(models.conference)
+admin.site.register(models.Team)
+admin.site.register(models.Player)
+admin.site.register(models.Conference)
+admin.site.register(models.AllStars)

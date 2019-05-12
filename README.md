@@ -4,6 +4,8 @@ This repository contains a python application that shows you the NBA players' an
 
 The players are divided by teams, and the teams by conferences to facilitate the search.
 
+There is an All-Stars' teams option too, where each user can create, modify or delete his own dream team, and share it with all the other users.
+
 ## Authors
 
 - Arnau Nadal
@@ -45,8 +47,9 @@ Here you have some considerations about how to run the project in your local mac
 
   Password: nbastats1234
 
-### Deployed
-  We deployed our application to Heroku. After more than 30 tries, we managed to deploy the application to heroku but the static images   are not properly shown. You can acces the conference links if you click to the "missing image" icon. On the next deliverable it will     be solved. 
+### Deploy
+
+  We deployed our application to Heroku.
   Link: https://nbastats.herokuapp.com/
 
 ## Design decisions
@@ -69,7 +72,13 @@ Store config in the environment.
 
 #### - Build, release, run
 
-Strictly separate build and run stages (In this case, it's more like an objective than an accomplishment. Our design meet its, but heroku is not working well yet in our project, so until we fix the errors it will be pending).
+Strictly separate build and run stages.
+
+### Models
+
+We have created 3 different models, which are conference', team' and 'player'. This is, also, the distribution that we have done with the information.
+
+And a fourth one, which is the All-Star team one.
 
 ### Models
 

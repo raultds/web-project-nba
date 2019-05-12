@@ -7,17 +7,29 @@
 </head>
 
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-    <span class="navbar-brand">NBAStats</span>
-    <ul class="navbar-nav mr-auto">
-        <a class="nav-link" href="/">Home</a>
+    <ul class="navbar-nav">
+      <img src="https://cdn.freebiesupply.com/images/large/2x/nba-logo-transparent.png" height="50" width="25"/>
     </ul>
-    {% block header %}
-        {% if user.is_authenticated %}
-            <p>User: {{ user.username }} | <a href="{% url 'logout' %}?next={{request.path}}">Logout</a></p>
-        {% else %}
-            <p><a href="{% url 'login' %}?next={{request.path}}">Login</a></p>
-        {% endif %}
-    {% endblock %}
+    <span class="navbar-brand">NBAStats</span>
+    <ul class="navbar-nav">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+    </ul>
+    <ul class="navbar-nav">
+        <a class="nav-link" href="{% url 'my_all_stars' %}">MyAllStars</a>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+        <a class="nav-link" href="{% url 'all_all_stars' %}">AllStars</a>
+    </ul>
+
+    <ul class="navbar-nav">
+      {% block header %}
+          {% if user.is_authenticated %}
+              <p>User: {{ user.username }} | <a href="{% url 'logout' %}">Logout</a></p>
+          {% else %}
+              <p><a href="{% url 'login' %}">Login</a></p>
+          {% endif %}
+      {% endblock %}
+    </ul>
 </nav>
 
 <style>

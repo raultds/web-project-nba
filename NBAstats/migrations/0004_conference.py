@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('conference_id', models.IntegerField(primary_key=True, serialize=False)),
                 ('conference_name', models.CharField(blank=True, max_length=10, null=True)),
-                ('team', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='NBAstats.team')),
+                ('team', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='NBAstats.Team')),
             ],
         ),
     ]

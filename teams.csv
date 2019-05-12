@@ -1,30 +1,30 @@
-81,Eastern,TOR,Toronto,Raptors
-82,Eastern,BOS,Boston,Celtics
-85,Eastern,PHI,Philadelphia,76ers
-86,Eastern,CLE,Cleveland,Cavaliers
-87,Eastern,IND,Indiana,Pacers
-92,Eastern,MIA,Miami,Heat
-90,Eastern,MIL,Milwaukee,Bucks
-94,Eastern,WAS,Washington,Wizards
-88,Eastern,DET,Detroit,Pistons
-93,Eastern,CHA,Charlotte,Hornets
-83,Eastern,NYK,New York,Knicks
-84,Eastern,BRO,Brooklyn,Nets
-89,Eastern,CHI,Chicago,Bulls
-95,Eastern,ORL,Orlando,Magic
-91,Eastern,ATL,Atlanta,Hawks
-109,Western,HOU,Houston,Rockets
-101,Western,GSW,Golden State,Warriors
-97,Western,POR,Portland,Trail Blazers
-98,Western,UTA,Utah,Jazz
-96,Western,OKL,Oklahoma City,Thunder
-110,Western,NOP,New Orleans,Pelicans
-106,Western,SAS,San Antonio,Spurs
-100,Western,MIN,Minnesota,Timberwolves
-99,Western,DEN,Denver,Nuggets
-102,Western,LAC,Los Angeles,Clippers
-105,Western,LAL,Los Angeles,Lakers
-103,Western,SAC,Sacramento,Kings
-108,Western,DAL,Dallas,Mavericks
-107,Western,MEM,Memphis,Grizzlies
-104,Western,PHX,Phoenix,Suns
+81;Eastern;TOR;Toronto;Raptors;https://es.global.nba.com/media/img/teams/00/logos/TOR_logo.svg
+82;Eastern;BOS;Boston;Celtics;https://es.global.nba.com/media/img/teams/00/logos/BOS_logo.svg
+85;Eastern;PHI;Philadelphia;76ers;https://es.global.nba.com/media/img/teams/00/logos/PHI_logo.svg
+86;Eastern;CLE;Cleveland;Cavaliers;https://es.global.nba.com/media/img/teams/00/logos/CLE_logo.svg
+87;Eastern;IND;Indiana;Pacers;https://es.global.nba.com/media/img/teams/00/logos/IND_logo.svg
+92;Eastern;MIA;Miami;Heat;https://es.global.nba.com/media/img/teams/00/logos/MIA_logo.svg
+90;Eastern;MIL;Milwaukee;Bucks;https://es.global.nba.com/media/img/teams/00/logos/MIL_logo.svg
+94;Eastern;WAS;Washington;Wizards;https://es.global.nba.com/media/img/teams/00/logos/WAS_logo.svg
+88;Eastern;DET;Detroit;Pistons;https://es.global.nba.com/media/img/teams/00/logos/DET_logo.svg
+93;Eastern;CHA;Charlotte;Hornets;https://es.global.nba.com/media/img/teams/00/logos/CHA_logo.svg
+83;Eastern;NYK;New York;Knicks;https://es.global.nba.com/media/img/teams/00/logos/NYK_logo.svg
+84;Eastern;BRO;Brooklyn;Nets;https://es.global.nba.com/media/img/teams/00/logos/BKN_logo.svg
+89;Eastern;CHI;Chicago;Bulls;https://es.global.nba.com/media/img/teams/00/logos/CHI_logo.svg
+95;Eastern;ORL;Orlando;Magic;https://es.global.nba.com/media/img/teams/00/logos/ORL_logo.svg
+91;Eastern;ATL;Atlanta;Hawks;https://es.global.nba.com/media/img/teams/00/logos/ATL_logo.svg
+109;Western;HOU;Houston;Rockets;https://es.global.nba.com/media/img/teams/00/logos/HOU_logo.svg
+101;Western;GSW;Golden State;Warriors;https://es.global.nba.com/media/img/teams/00/logos/GSW_logo.svg
+97;Western;POR;Portland;Trail Blazers;https://es.global.nba.com/media/img/teams/00/logos/POR_logo.svg
+98;Western;UTA;Utah;Jazz;https://es.global.nba.com/media/img/teams/00/logos/UTA_logo.svg
+96;Western;OKL;Oklahoma City;Thunder;https://es.global.nba.com/media/img/teams/00/logos/OKC_logo.svg
+110;Western;NOP;New Orleans;Pelicans;https://es.global.nba.com/media/img/teams/00/logos/NOP_logo.svg
+106;Western;SAS;San Antonio;Spurs;https://es.global.nba.com/media/img/teams/00/logos/SAS_logo.svg
+100;Western;MIN;Minnesota;Timberwolves;https://es.global.nba.com/media/img/teams/00/logos/MIN_logo.svg
+99;Western;DEN;Denver;Nuggets;https://es.global.nba.com/media/img/teams/00/logos/DEN_logo.svg
+102;Western;LAC;Los Angeles;Clippers;https://es.global.nba.com/media/img/teams/00/logos/LAC_logo.svg
+105;Western;LAL;Los Angeles;Lakers;https://es.global.nba.com/media/img/teams/00/logos/LAL_logo.svg
+103;Western;SAC;Sacramento;Kings;https://es.global.nba.com/media/img/teams/00/logos/SAC_logo.svg
+108;Western;DAL;Dallas;Mavericks;https://es.global.nba.com/media/img/teams/00/logos/DAL_logo.svg
+107;Western;MEM;Memphis;Grizzlies;https://es.global.nba.com/media/img/teams/00/logos/MEM_logo.svg
+104;Western;PHX;Phoenix;Suns;https://es.global.nba.com/media/img/teams/00/logos/PHX_logo.svg

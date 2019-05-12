@@ -44,6 +44,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='player',
             name='team_id',
-            field=models.ForeignKey(default=0, null=True, on_delete=django.db.models.deletion.SET_NULL, to='NBAstats.team'),
+            field=models.ForeignKey(default=0, null=True, on_delete=django.db.models.deletion.SET_NULL, to='NBAstats.Team'),
         ),
     ]

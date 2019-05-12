@@ -1,7 +1,21 @@
 {%  extends 'NBAstats/base.html' %}
 {% block content %}
     <h1>Conference {{ conference.conference_name }}</h1>
+    
+    <ul class="nav justify-content-center">
     {% for team in teams %}
-        <h4><a href="team/{{ team.team_id }}">{{ team.team_city}} {{ team.team_name}}</a></h4>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a href="team/{{ team.team_id }}">
+            <img src="{{ team.image_path }}" height="250" width="250" hspace="20"/>
+          </a>
+        </li>
+        <li class="nav-item">
+            <div style="text-align: center;">
+              <h4><a href="team/{{ team.team_id }}">{{ team.team_city}} {{ team.team_name}}</a></h4>
+            </div>
+        </li>
+      </ul>
     {%  endfor %}
+    </ul>
 {%  endblock %}

@@ -18,7 +18,83 @@
         </ul>
     </ul>
     </br>
-    {% for stat, value in stats.items %}
-        <h4>{{stat}}:  {{value}}</h4>
-    {% endfor %}
+    <!--1ra Linea de Cards  -->
+
+    <div class="card-deck mr-5 ml-5">
+        <div class="card text-white bg-secondary mb-3 border-dark" style="width: 24rem;">
+          <h3 class="card-header">Fg2 Stats</h3>
+          <div class="card-body">
+            {% for 2point, value in 2points.items %}
+              <p class="card-text">{{2point}}:  {{value}}</p>
+              {% endfor %}
+          </div>
+        </div>
+      <div class="card text-white bg-secondary mb-3 border-dark" style="width: 24rem;">
+        <h3 class="card-header">Fg3 Stats</h3>
+        <div class="card-body">
+          {% for 3point, value in 3points.items %}
+            <p class="card-text">{{3point}}:  {{value}}</p>
+            {% endfor %}
+        </div>
+      </div>
+      <div class="card text-white bg-secondary mb-3 border-dark" style="width: 24rem;">
+          <h3 class="card-header">Fg Stats</h3>
+          <div class="card-body">
+          {% for fgpoint, value in fgpoints.items %}
+              <p class="card-text">{{fgpoint}}:  {{value}}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    </br>
+    <!--2na Linea de Cards  -->
+
+    <div class="card-deck mr-5 ml-5">
+        <div class="card text-white bg-secondary mb-3 border-dark" style="width: 24rem;">
+          <h3 class="card-header">Ft Stats</h3>
+          <div class="card-body">
+          {% for ftpoint, value in ftpoints.items %}
+              <p class="card-text">{{ftpoint}}:  {{value}}</p>
+          {% endfor %}
+          </div>
+        </div>
+      <div class="card text-white bg-secondary mb-3 border-dark" style="width: 24rem;">
+        <h3 class="card-header">Rebound Stats</h3>
+        <div class="card-body">
+          {% for rebound, value in rebounds.items %}
+              <p class="card-text">{{rebound}}:  {{value}}</p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="card text-white bg-secondary mb-3 border-dark" style="width: 24rem;">
+          <h3 class="card-header">Offensive Stats</h3>
+          <div class="card-body">
+            {% for off, value in offs.items %}
+                <p class="card-text">{{off}}:  {{value}}</p>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+
+    </br>
+    <!--3ra Linea de Cards  -->
+    <div class="card-deck mr-5 ml-5">
+          <div class="card text-white bg-secondary mb-3 border-dark" style="width: 24rem;">
+            <h3 class="card-header">Defensive Stats</h3>
+            <div class="card-body">
+            {% for def, value in defs.items %}
+                <p class="card-text">{{def}}:  {{value}}</p>
+            {% endfor %}
+          </div>
+        </div>
+      <div class="card text-white bg-secondary mb-3 border-dark" style="width: 24rem;">
+        <h3 class="card-header">Fouls Stats</h3>
+        <div class="card-body">
+        {% for foul, value in fouls.items %}
+            <p class="card-text">{{foul}}:  {{value}}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 {%  endblock %}
