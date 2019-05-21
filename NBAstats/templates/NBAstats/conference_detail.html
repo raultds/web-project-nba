@@ -1,13 +1,20 @@
+<span vocab="http://schema.org/" typeof="SportsTeam">
 {%  extends 'NBAstats/base.html' %}
 {% block content %}
-    <h1>Conference {{ conference.conference_name }}</h1>
+    <h1>
+        <span property="legalName">
+            Conference {{ conference.conference_name }}
+        </span>
+    </h1>
     
     <ul class="nav justify-content-center">
     {% for team in teams %}
       <ul class="nav flex-column">
         <li class="nav-item">
           <a href="team/{{ team.team_id }}">
-            <img src="{{ team.image_path }}" height="250" width="250" hspace="20"/>
+              <span property="logo">
+                <img src="{{ team.image_path }}" height="250" width="250" hspace="20"/>
+              </span>
           </a>
         </li>
         <li class="nav-item">
@@ -18,4 +25,5 @@
       </ul>
     {%  endfor %}
     </ul>
+</span>
 {%  endblock %}
