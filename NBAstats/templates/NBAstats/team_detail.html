@@ -1,7 +1,7 @@
-<span vocab="http://schema.org/" typeof="SportsTeam">
 {%  extends 'NBAstats/base.html' %}
 {% load static %}
 {% block content %}
+    <span vocab="http://schema.org/" typeof="SportsTeam">
     <ul class="navbar">
       <ul class="nav mr-auto justify-content-center">
           <span property="logo">
@@ -33,8 +33,8 @@
         </li>
         <li class="nav-item">
           <div style="text-align: center;">
-            <h4><a href="player/{{ player.player_id }}">
-                <span property="athlete">
+            <h4 property="athlete"><a href="player/{{ player.player_id }}" typeof="Person">
+                <span property="name">
                     {{ player.name}} {{player.last_name }}
                 </span>
             </a></h4>
